@@ -19,7 +19,7 @@ jobs:
       DOCKER_IMAGE: ${{ secrets.DOCKER_IMAGE }}      
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
-      DOCKER_TARGET_PLATFORMS: linux/amd64,linux/arm/v7,linux/arm64
+      DOCKER_TARGET_PLATFORMS: amd64,arm/v7,arm64
     steps:
     - name: Checkout the code       
       uses: actions/checkout@v3

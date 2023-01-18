@@ -4,7 +4,7 @@ on:
   push:
     branches: [ master ]
     tags:
-      - "0.1.*"
+      - "*"
   pull_request:
     branches: [ master ]
   repository_dispatch:
@@ -22,9 +22,10 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/thedatabaseme/hello-world
           flavor: latest=true
           tags: |
+            type=ref,event=branch
+            type=ref,event=pr
             type=semver,pattern={{version}}
       -
         name: Set up QEMU

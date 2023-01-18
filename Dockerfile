@@ -19,7 +19,7 @@ RUN    git clone --depth 1 --branch master --single-branch \
         https://github.com/prometheus-community/node-exporter-textfile-collector-scripts.git \
         /scripts
 RUN    chmod 755 /scripts/*
-RUN    update-pciids -q
+#RUN    update-pciids -q
 
 COPY entrypoint.sh /entrypoint.sh
 

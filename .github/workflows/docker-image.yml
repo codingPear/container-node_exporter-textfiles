@@ -22,7 +22,7 @@ jobs:
         id: prepare      
         run: |        
          echo "docker_platform=${DOCKER_TARGET_PLATFORMS}" >> $GITHUB_OUTPUT
-         echo "docker_image=${DOCKER_REGISTRY}/${DOCKER_IMAGE}" >> $GITHUB_OUTPUT
+         echo "docker_image=${DOCKER_USERNAME}/${DOCKER_IMAGE}" >> $GITHUB_OUTPUT
          echo "version=0.1.${GITHUB_RUN_NUMBER}" >> $GITHUB_OUTPUT
       -
         name: Set up QEMU

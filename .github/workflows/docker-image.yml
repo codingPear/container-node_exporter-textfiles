@@ -43,4 +43,4 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: true
-          tags: ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.version }}, ${{ steps.prepare.outputs.docker_image }}:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGE }}:0.1.${{ GITHUB_RUN_NUMBER}}, ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGE }}:latest

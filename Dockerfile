@@ -3,9 +3,7 @@ FROM alpine:latest
 ARG BUILD_DATE="N/A"
 ARG REVISION="N/A"
 
-RUN apt-get -q update && \
-    apt-get -q upgrade -y && \
-    apt-get install -y --no-install-recommends \
+RUN apk --no-cache add \
         ca-certificates \
         git \
         jq \
@@ -15,7 +13,6 @@ RUN apt-get -q update && \
         smartmontools \
         wget \
         python3 && \
-    apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     mkdir -p /scripts && \
     git clone --depth 1 --branch master --single-branch \

@@ -22,11 +22,9 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ secrets.DOCKER_REGISTRY }}/${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGE }}
+          images: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGE }}
           flavor: latest=true
           tags: |
-            type=ref,event=branch
-            type=ref,event=pr
             type=semver,pattern={{minor}}
       -
         name: Set up QEMU

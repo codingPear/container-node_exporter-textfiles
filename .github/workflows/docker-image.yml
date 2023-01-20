@@ -24,7 +24,7 @@ jobs:
         with:
           images: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGE }}
           flavor: latest=true
-          tags: type=semver,pattern={{minor}}
+          tags: type=raw,value=0.1.{{github.github.run_number}}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2

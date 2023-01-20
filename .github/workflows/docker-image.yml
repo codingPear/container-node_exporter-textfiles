@@ -24,8 +24,8 @@ jobs:
         with:
           images: ${{ secrets.DOCKER_REGISTRY }}/${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGE }}
           flavor: latest=true
-          tag-semver: |
-             {{raw}}
+          tags: |
+             type=semver,pattern={{minor}}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2

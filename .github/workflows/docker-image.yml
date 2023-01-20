@@ -29,7 +29,7 @@ jobs:
         with:
           images: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGE }}
           flavor: latest=true
-          tags: type=raw,value=${{ env.VERSION_NUMBER }}
+          tags: type=raw,value=${{ env.GITHUB_RUN_NUMBER }} #${{ env.VERSION_NUMBER }}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2

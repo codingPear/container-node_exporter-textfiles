@@ -1,24 +1,7 @@
 # container-node_exporter-textfiles
 
-<details>
-    <summary>
-        <b>NOTICE The repository and image have been renamed on 18.02.2022! For more information click this spoiler</b>
-    </summary>
-
-    The container images name has been changed from `galexrt/node-exporter-smartmon` to **`galexrt/node-exporter-textfiles`**.
-    E.g., the image on quay.io is now available at `quay.io/galexrt/node-exporter-smartmon`.
-
-    The repository name has been changed from `container-node_exporter-smartmon` to **`container-node_exporter-textfiles`**.
-
-    This has been done as the image in this repository is not just for running the `smartmon` textfile collector script(s) anymore.
-</details>
-
 Container Image for easily running textfile exporter scripts from the Prometheus Community to be collected by the prometheus/node_exporter.
 
-Container Image available from:
-
-* [Quay.io](https://quay.io/repository/galexrt/node-exporter-textfiles)
-* [GHCR.io](https://github.com/users/galexrt/packages/container/package/node-exporter-textfiles)
 
 Container Image Tags:
 
@@ -45,16 +28,3 @@ The entrypoint script is putting the output into the directory `/var/lib/node_ex
 
 Any flags / args given to the container are passed to the `SCRIPT` that will be executed.
 
-## Grafana Dashboard
-
-A Grafana dashboard for viewing `smartmon` metrics can be found in the [`grafana/`](grafana/) directory and [Grafana.com - Smartmon Textfile Dashboard by Galexrt](https://grafana.com/dashboards/3992).
-
-## Required node_exporter Configuration
-
-See [node_exporter Configuration Prerequisites](docs/node_exporter.md).
-
-## Kubernetes
-Following deployments / installation methods are available:
-
-* [`node-exporter-textfiles` Helm Chart](charts/node-exporter-textfiles) (Recommended)
-* [`kubernetes/`](kubernetes/) directory contains an example DaemonSet running the `smartmon.sh` and `nvme_metrics.sh` textfile scripts.

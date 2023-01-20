@@ -4,7 +4,7 @@ on:
   push:
     branches: [ master ]
     tags:
-      - "0.1.${{github.run_number}}"
+      - "0.1.*"
   pull_request:
     branches: [ master ]
   repository_dispatch:
@@ -24,8 +24,8 @@ jobs:
         with:
           images: ${{ secrets.DOCKER_REGISTRY }}/${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGE }}
           flavor: latest=true
-          tags: |
-            type=semver,pattern={{version}}
+          tag-semver: |
+             {{raw}}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2

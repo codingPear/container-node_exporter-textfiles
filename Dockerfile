@@ -12,7 +12,8 @@ RUN apk --no-cache add \
         pciutils \
         smartmontools \
         wget \
-        python3
+        python3 \
+        bash
 RUN    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN    mkdir -p /scripts
 RUN    git clone --depth 1 --branch master --single-branch \

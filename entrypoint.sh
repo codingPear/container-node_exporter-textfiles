@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # Copyright (c) Alexander Trost 2020
 # Licensed under MIT license.
